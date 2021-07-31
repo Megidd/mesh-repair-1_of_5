@@ -72,6 +72,9 @@ public:
   ~MeshFacet (void) { }
   //@}
 
+  void ResetFlag (TFlagType tF) const
+  { const_cast<MeshFacet*>(this)->_ucFlag &= ~static_cast<unsigned char>(tF); }
+  
    void FlipNormal (void)
   {
     std::swap(_aulPoints[1], _aulPoints[2]);
@@ -134,6 +137,8 @@ public:
     ~MeshFacetArray (void) { }
     //@}
 
+    /// Resets the flag for all facets. 
+    void ResetFlag (MeshFacet::TFlagType tF) const;
 };
 
 /**

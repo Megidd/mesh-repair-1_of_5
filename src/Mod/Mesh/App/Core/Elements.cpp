@@ -47,3 +47,8 @@ MeshFacetArray::MeshFacetArray(const MeshFacetArray& ary)
   : TMeshFacetArray(ary)
 {
 }
+
+void MeshFacetArray::ResetFlag (MeshFacet::TFlagType tF) const
+{
+  for (MeshFacetArray::_TConstIterator i = begin(); i < end(); ++i) i->ResetFlag(tF);
+}

@@ -104,6 +104,13 @@ public:
     void RemoveInvalids ();
     /** Clears the whole data structure. */
     void Clear (void);
+        /** Returns the array of all facets */
+    const MeshFacetArray& GetFacets (void) const { return _aclFacetArray; }
+    /** Returns an array of facets to the given indices. The indices
+     * must not be out of range.
+     */
+    MeshFacetArray GetFacets(const std::vector<unsigned long>&) const;
+
 
 protected:
 
